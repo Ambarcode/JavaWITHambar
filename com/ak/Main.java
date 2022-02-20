@@ -1,7 +1,5 @@
 package com.ak;
 
-import java.util.Scanner;
-
 //
 //   class Main {
 //
