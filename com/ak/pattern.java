@@ -6,7 +6,7 @@ class Pattern{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //int n =sc.nextInt();
-        int n=4;
+        int n=5;
         // pattern1(n);
         // pattern2(n);
         // pattern3(n);
@@ -14,8 +14,26 @@ class Pattern{
         // pattern28(n);
         //pattern30(n);
          //pattern17(n);
-         pattern31(n);
+         //pattern31(n);
+        pattern12(n);
 
+    }
+
+    private static void pattern12(int n) {
+
+        for (int row = 1; row <=2*n ; row++) {
+            int noOfColumn=row>n?row-n:n-row+1;;
+            int noOfSpaces=n-noOfColumn;
+            for (int spaces = 1; spaces <= noOfSpaces; spaces++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <=noOfColumn; col++) {
+                System.out.print("* ");
+
+            }
+            System.out.println();
+
+        }
     }
 
     private static void pattern31(int n) {
