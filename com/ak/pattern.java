@@ -15,8 +15,78 @@ class Pattern{
         //pattern30(n);
          //pattern17(n);
          //pattern31(n);
-        pattern12(n);
+        //pattern12(n);
+        //pattern13(n);
+        //pattern14(n);
+        pattern15(n);
+    }
 
+    private static void pattern15(int n) {
+        for (int row = 1 ;row <=n ; row++) {
+            for(int spaces=1;spaces<=n-row;spaces++){
+                System.out.print(" ");
+            }
+            for (int col = 1; col <=2*row-1; col++) {
+                if (col==1|| col==2*row-1){
+                    System.out.print("*");
+                }
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+
+
+        }
+        for (int row = 2; row <=n ; row++) {
+            for (int spaces = 1; spaces <row; spaces++) {
+
+                System.out.print(" ");
+
+            }
+            for (int col = 2*row-1; col <=2*n-1 ; col++) {
+                if (col==2*row-1||col==2*n-1){
+                    System.out.print("*");
+                }
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    private static void pattern14(int n) {
+        for (int row = 1; row <=n ; row++) {
+            for (int spaces = 1; spaces <row; spaces++) {
+
+                System.out.print(" ");
+
+            }
+            for (int col = 2*row-1; col <=2*n-1 ; col++) {
+                if (row==1||col==2*row-1||col==2*n-1){
+                    System.out.print("*");
+                }
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void pattern13(int n) {
+        for (int row = 1 ;row <=n ; row++) {
+            for(int spaces=1;spaces<=n-row;spaces++){
+                System.out.print(" ");
+            }
+            for (int col = 1; col <=2*row-1; col++) {
+                if (col==1|| col==2*row-1|| row==n){
+                    System.out.print("*");
+                }
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
     }
 
     private static void pattern12(int n) {
