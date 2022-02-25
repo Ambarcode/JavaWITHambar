@@ -18,7 +18,28 @@ class Pattern{
         //pattern12(n);
         //pattern13(n);
         //pattern14(n);
-        pattern15(n);
+        //pattern15(n);
+        ///NOW WE ARE GOING TO PRINT A PATTERN USING SINGLE FOR LOOP
+        //patternUsingSingleForLoop(n);
+    }
+
+    private static void patternUsingSingleForLoop(int n) {
+        int currStar=0;
+        for (int currLine = 1; currLine <=n;) {
+            if (currStar< currLine) {
+                System.out.print("*");
+                currStar++;
+                continue;
+
+            }
+            if (currStar==currLine){
+                System.out.println("");
+                currLine++;
+                currStar=0;
+
+            }
+
+        }
     }
 
     private static void pattern15(int n) {
@@ -262,4 +283,5 @@ class Pattern{
     }
 
 }
+
 
