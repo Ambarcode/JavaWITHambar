@@ -18,7 +18,12 @@ public class ArraySort implements Comparable<ArraySort>{
 
     @Override
     public int compareTo(ArraySort o) {
-        return this.name.compareToIgnoreCase(o.name);
+        //return this.name.compareToIgnoreCase(o.name);
+        return this.age-o.age; // if return -ve it'll not swap and if return positive it will swap the ages
+        // The method returns 0 if the string is equal to the other string.
+        // A value less than 0 is returned if the string is less than the other string (less characters)
+        // and a value greater than 0 if the string is greater than the other string (more characters
+
     }
 }
 

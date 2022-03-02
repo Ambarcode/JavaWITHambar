@@ -42,15 +42,30 @@ class Best_Friend {
 		Best_Friend b = new Best_Friend(
 			"Gulpreet Kaur", 21, "BIT MESRA", "M.TECH",
 			"Kiriburu");
+//		for (Best_Friend index : b) {
+//			System.out.println(index);
+//
+//		}
 
 		// Print and display commands to illustrate
 		// toString() method as both will print the same
 		// Print the object
 		System.out.println(b);
 
+
 		// when we don't define the method toString it will implicitly call tht toString method implicitly
 
 		// Printing object but using toString() method
 		System.out.println(b.toString());
+
+		Best_Friend[] b1 ={new Best_Friend("Ambar kansal", 20, "DIT University", "B.tech", "Meerut"),new Best_Friend(
+				"Gulpreet Kaur", 21, "BIT MESRA", "M.TECH",
+				"Kiriburu")};
+
+		for (Best_Friend index : b1) {
+			System.out.println(index);
+		}
+		System.out.println(b1);
+
 	}
 }
