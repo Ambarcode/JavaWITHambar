@@ -1,0 +1,232 @@
+
+              The java instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface).
+              The instanceof in java is also known as type comparison operator because it compares the instance with type. It returns either true or false.
+              If we apply the instanceof operator with any variable that has null value, it returns false.
+
+
+
+           ---------------Simple example of java instanceof------------------------
+
+           Let's see the simple example of instance operator where it tests the current class.
+
+           class Simple1{
+            public static void main(String args[]){
+            Simple1 s=new Simple1();
+            System.out.println(s instanceof Simple1);//true
+            }
+           }
+
+       ---------Output------------
+                true
+
+
+      An object of subclass type is also a type of parent class. For example, if Dog extends Animal then object of Dog can be referred by either Dog or Animal class.
+
+    --------------------  Another example of java instanceof operator  --------------------------------
+
+    class Animal{}
+    class Dog1 extends Animal{//Dog inherits Animal
+
+     public static void main(String args[]){
+     Dog1 d=new Dog1();
+     System.out.println(d instanceof Animal);//true
+     }
+    }
+
+    --------------Output------------------------
+                 true
+
+
+        ------------------------- instanceof in java with a variable that have null value -------------------------
+
+        class Dog2{
+         public static void main(String args[]){
+          Dog2 d=null;
+          System.out.println(d instanceof Dog2);//false
+         }
+        }
+
+    --------------Output--------------------------
+                   false
+
+
+     *************  Downcasting with java instanceof operator **********************
+
+      When Subclass type refers to the object of Parent class, it is known as downcasting. If we perform it directly, compiler gives Compilation error. If you perform it by typecasting, ClassCastException is thrown at runtime.
+      But if we use instanceof operator, downcasting is possible.
+
+
+          Dog d=new Animal();//Compilation error
+
+
+          If we perform downcasting by typecasting, ClassCastException is thrown at runtime.
+
+          Dog d=(Dog)new Animal();
+          //Compiles successfully but ClassCastException is thrown at runtime
+
+
+          -------------Possibility of downcasting with instanceof---------------------
+
+          Let's see the example, where downcasting is possible by instanceof operator.
+
+          class Animal { }
+
+          class Dog3 extends Animal {
+            static void method(Animal a) {
+              if(a instanceof Dog3){
+                 Dog3 d=(Dog3)a;//downcasting
+                 System.out.println("ok downcasting performed");
+              }
+            }
+
+            public static void main (String [] args) {
+              Animal a=new Dog3();
+              Dog3.method(a);
+            }
+
+           }
+
+          ---------- Output---------------------
+               ok downcasting performed
+
+
+      --------------- Downcasting without the use of java instanceof --------------------------
+
+      Downcasting can also be performed without the use of instanceof operator as displayed in the following
+
+      class Animal { }
+      class Dog4 extends Animal {
+        static void method(Animal a) {
+             Dog4 d=(Dog4)a;//downcasting
+             System.out.println("ok downcasting performed");
+        }
+         public static void main (String [] args) {
+          Animal a=new Dog4();
+          Dog4.method(a);
+        }
+      }
+
+      ---------------  Output  --------------------
+              ok downcasting performed
+
+     Let's take closer look at this, actual object that is referred by a, is an object of Dog class. So if we downcast it, it is fine. But what will happen if we write:
+
+
+    ------------ Understanding Real use of instanceof in java -----------------------
+
+    Let's see the real use of instanceof keyword by the example given below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2) Downcasting
+    Upcasting is another type of object typecasting. In Upcasting, we assign a parent class reference object to the child class. In Java, we cannot assign a parent class reference object to the child class, but if we perform downcasting, we will not get any compile-time error. However, when we run it, it throws the "ClassCastException". Now the point is if downcasting is not possible in Java, then why is it allowed by the compiler? In Java, some scenarios allow us to perform downcasting. Here, the subclass object is referred by the parent class.
+
+    Below is an example of downcasting in which both the valid and the invalid scenarios are explained:
+
+    DowncastingExample.java
+
+    //Parent class
+    class Parent {
+        String name;
+
+        // A method which prints the data of the parent class
+        void showMessage()
+        {
+            System.out.println("Parent method is called");
+        }
+    }
+
+    // Child class
+    class Child extends Parent {
+        int age;
+
+        // Performing overriding
+        @Override
+        void showMessage()
+        {
+            System.out.println("Child method is called");
+        }
+    }
+
+    public class Downcasting{
+
+        public static void main(String[] args)
+        {
+            Parent p = new Child();
+            p.name = "Shubham";
+
+            // Performing Downcasting Implicitly
+            //Child c = new Parent(); // it gives compile-time error
+
+            // Performing Downcasting Explicitly
+            Child c = (Child)p;
+
+            c.age = 18;
+            System.out.println(c.name);
+            System.out.println(c.age);
+            c.showMessage();
+        }
+    }
+
+    interface Printable{}
+    class A implements Printable{
+    public void a(){System.out.println("a method");}
+    }
+    class B implements Printable{
+    public void b(){System.out.println("b method");}
+    }
+
+    class Call{
+    void invoke(Printable p){//upcasting
+    if(p instanceof A){
+    A a=(A)p;//Downcasting
+    a.a();
+    }
+    if(p instanceof B){
+    B b=(B)p;//Downcasting
+    b.b();
+    }
+
+    }
+    }//end of Call class
+
+    class Test4{
+    public static void main(String args[]){
+    Printable p=new B();
+    Call c=new Call();
+    c.invoke(p);
+    }
+    }
+
+
+
+
+
+
+We have seen here that a parent class data member is accessed when a reference of parent type refers to a child object. We can access child data members using typecasting.
+
+Syntax:
+
+((child_class_name) Parent_Reference_variable).func.name()
+
+ When we do typecast, it is always a good idea to check if the typecasting is valid or not. instanceof helps us here.
+ We can always first check for validity using instancef, then do typecasting.
