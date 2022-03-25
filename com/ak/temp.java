@@ -564,4 +564,15 @@ class Foo{
     }
 }
 
+class Ambar{
+    void run(){
+        System.out.println("Hello World ");
+    }
+}
+class Keerti extends Ambar{
+    public static void main(String[] args) {
+        Ambar amb=new Keerti();
+
+    }
+}
 

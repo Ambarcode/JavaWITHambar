@@ -7,18 +7,18 @@ class Pattern{
         Scanner sc = new Scanner(System.in);
         //int n =sc.nextInt();
         int n=5;
-        // pattern1(n);
-        // pattern2(n);
-        // pattern3(n);
-        // pattern4(n);
-        // pattern28(n);
-        //pattern30(n);
-         //pattern17(n);
-         //pattern31(n);
-        //pattern12(n);
-        //pattern13(n);
-        //pattern14(n);
-        //pattern15(n);
+         pattern1(n);
+         pattern2(n);
+         pattern3(n);
+         pattern4(n);
+         pattern28(n);
+         pattern30(n);
+         pattern17(n);
+         pattern31(n);
+         pattern12(n);
+         pattern13(n);
+         pattern14(n);
+         pattern15(n);
         ///NOW WE ARE GOING TO PRINT A PATTERN USING SINGLE FOR LOOP
         //patternUsingSingleForLoop(n);
     }

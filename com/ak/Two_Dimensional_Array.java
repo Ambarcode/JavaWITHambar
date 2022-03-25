@@ -76,7 +76,7 @@ public class Two_Dimensional_Array {
 
     private static void printArray(int[][] integers) {
         System.out.println(Arrays.deepToString(integers));
-    } 
+    }
 
     private static int[][] getArray() {
         return new int[][]{{1,2,3},{3,4,5}};
