@@ -1,0 +1,14 @@
+An in-place sorting algorithm is a type of sorting algorithm that operates directly on the input array or list, without requiring any additional memory beyond the input itself. This means that an in-place sorting algorithm does not create a separate copy of the input array or use any external data structures to store intermediate results.
+
+In contrast, a non-in-place sorting algorithm may require additional memory to store intermediate results, such as temporary arrays, lists, or trees.
+
+In-place sorting algorithms are often preferred in situations where memory usage is a concern, such as in embedded systems, real-time applications, or environments with limited resources. In addition, in-place sorting algorithms can also be faster than non-in-place sorting algorithms because they avoid the overhead of allocating and deallocating memory.
+
+Some examples of in-place sorting algorithms include:
+
+Selection sort
+Insertion sort
+Bubble sort
+Quick sort (in some implementations)
+Heap sort (in some implementations)
+However, it's important to note that in-place sorting algorithms can also have drawbacks, such as being less efficient or less convenient to implement in certain situations. Therefore, the choice of sorting algorithm depends on various factors, such as the size of the input data, the available memory, the desired stability and efficiency, and the ease of implementation.
