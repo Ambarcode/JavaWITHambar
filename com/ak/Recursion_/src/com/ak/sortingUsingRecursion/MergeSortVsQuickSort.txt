@@ -1,0 +1,14 @@
+Both quicksort and mergesort are efficient sorting algorithms that can be used to sort arrays of elements.
+
+Quicksort has an average time complexity of O(n log n), which makes it one of the fastest sorting algorithms.
+It works by partitioning an array into two parts, where elements in one part are less than a pivot element and elements in the other part are greater than or equal to the pivot element.
+Quicksort is a good choice when memory is limited because it requires only a small additional memory for the stack.
+ However, its worst-case time complexity is O(n^2), which can happen if the pivot is chosen poorly or if the input is already sorted.
+
+Mergesort, on the other hand, has a worst-case time complexity of O(n log n) and guarantees that the worst-case running time is the same as the average running time.
+It works by dividing an array into two halves, sorting each half recursively, and then merging the two sorted halves.
+Mergesort is a good choice when stability is important, meaning that the order of equal elements in the input array should be preserved in the output.
+It requires additional memory to store the sorted halves during the merging process.
+
+In general, quicksort is preferred for larger datasets with random access, and mergesort is preferred for smaller datasets or for situations where stable sorting is necessary.
+However, the choice between the two depends on the specific requirements of the problem at hand, as well as the characteristics of the data being sorted
