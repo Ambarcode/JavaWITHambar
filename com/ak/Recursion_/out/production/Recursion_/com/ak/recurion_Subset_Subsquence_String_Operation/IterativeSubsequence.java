@@ -19,14 +19,16 @@ public class IterativeSubsequence {
 //    The contents of outer are printed to the console using System.out.println(outer);.
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
-        iterativeSubset(arr);
-        System.out.println();
-        ArrayList<Integer> list=new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        List<List<Integer>> ans=generateSubsets(list);
+        List<List<Integer>> ans=generateSubsets2(arr);
         System.out.println(ans);
+ //        iterativeSubset(arr);
+//        System.out.println();
+//        ArrayList<Integer> list=new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        List<List<Integer>> ans=generateSubsets(list);
+//        System.out.println(ans);
 
     }
 

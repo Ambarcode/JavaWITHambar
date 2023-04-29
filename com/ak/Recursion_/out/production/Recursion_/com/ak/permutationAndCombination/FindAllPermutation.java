@@ -2,6 +2,7 @@ package com.ak.permutationAndCombination;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class FindAllPermutation {
@@ -17,8 +18,11 @@ public class FindAllPermutation {
 //       ArrayList<String> ans= dicePermutation2("",4);
 //        System.out.println(ans);
 
-        int count=countDicePermutation("",4,0);
-        System.out.println(count);
+//        int count=countDicePermutation("",4);
+//        System.out.println(count);
+//        findPermutation("","abc");
+        String ans="Ambar";
+        System.out.println(ans.substring(0,1));
     }
 
     public static void findPermutation(String pr, String up) {
@@ -231,15 +235,59 @@ public class FindAllPermutation {
         return ans;
     }
 
-    //Now we'll count total number of permutation
-    static int countDicePermutation(String up , int target , int count) {
+    //Now what if there are multiple faces
+    static  ArrayList<String> diceFace(String up , int target,int face) {
         if (target == 0) {
-            count++;
-            return count;
+            ArrayList<String> list =new ArrayList<>();
+            list.add(up);
+            return list;
         }
 
+        ArrayList<String> ans= new ArrayList<>();
+        for (int i = 1; i <= face && i<=target ;i++) {
+            ans.addAll(diceFace(up+i,target-i,face));
+        }
+        return ans;
+    }
+
+//    //Now what if there are multiple dices
+//    public static int numRollsToTarget(int n, int k, int target) {
+//        HashMap<String, Integer> memo = new HashMap<>();
+//        return numRollsToTargetHelper(n, k, target, memo);
+//    }
+//
+////    private static int numRollsToTargetHelper(int n, int k, int target, HashMap<String, Integer> memo) {
+//        if (n == 0 && target == 0) {
+//            return 1;
+//        } else if (n == 0 || target == 0) {
+//            return 0;
+//        }
+//
+//        String key = n + "-" + target;
+//        if (memo.containsKey(key)) {
+//            return memo.get(key);
+//        }
+//
+//        int ways = 0;
+//        for (int i = 1; i <= k; i++) {
+//            if (i <= target) {
+//                ways = (ways + numRollsToTargetHelper(n - 1, k, target - i, memo)) % 1000000007;
+//            }
+//        }
+//
+//        memo.put(key, ways);
+//        return ways;
+//    }
+
+    //Now we'll count total number of permutation
+    static int countDicePermutation(String up , int target) {
+        if (target == 0) {
+           return 1;
+
+        }
+        int count=0;
         for (int i = 1; i <= 6 && i<=target ;i++) {
-           count+= countDicePermutation(up+i,target-i, count);
+           count+=countDicePermutation(up+i,target-i);
         }
         return count;
     }
